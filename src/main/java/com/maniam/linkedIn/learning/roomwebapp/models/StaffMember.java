@@ -1,29 +1,19 @@
 package com.maniam.linkedIn.learning.roomwebapp.models;
 
-public class Staff {
-    private long id;
+public class StaffMember {
     private String empId;
     private String firstName;
     private String lastName;
-    private String position;
+    private Position position;
 
-    public Staff() {
+    public StaffMember() {
     }
 
-    public Staff(long id, String empId, String firstName, String lastName, String position) {
-        this.id = id;
+    public StaffMember( String empId, String firstName, String lastName, Position position) {
         this.empId = empId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.position = position;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getEmpId() {
@@ -50,11 +40,11 @@ public class Staff {
         this.lastName = lastName;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 }
