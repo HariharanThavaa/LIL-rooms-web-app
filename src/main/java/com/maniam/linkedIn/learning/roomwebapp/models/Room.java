@@ -1,9 +1,20 @@
 package com.maniam.linkedIn.learning.roomwebapp.models;
 
+import jakarta.persistence.*;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Entity
+@Table(name = "ROOM")
 public class Room {
+    @Id
+    @Column(name="ROOM_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name="NAME")
     private String number;
+    @Column(name="ROOM_NUMBER")
     private String name;
+    @Column(name="BED_INFO")
     private String info;
 
     public Room() {
