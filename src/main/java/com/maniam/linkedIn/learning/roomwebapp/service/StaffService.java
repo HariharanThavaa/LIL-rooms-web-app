@@ -1,24 +1,19 @@
 package com.maniam.linkedIn.learning.roomwebapp.service;
 
-import com.maniam.linkedIn.learning.roomwebapp.models.Position;
+import com.maniam.linkedIn.learning.roomwebapp.data.StaffRepository;
 import com.maniam.linkedIn.learning.roomwebapp.models.StaffMember;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class StaffService {
 
-    private static final List<StaffMember> staff = new ArrayList<>();
+    private final StaffRepository staffRepository;
 
-    static {
-        staff.add(new StaffMember(UUID.randomUUID().toString(), "John", "Doe", Position.CONCIERGE));
-        staff.add(new StaffMember(UUID.randomUUID().toString(), "Jane", "Doe", Position.FRONT_DESK));
-        staff.add(new StaffMember(UUID.randomUUID().toString(), "Oliver", "Handle", Position.SECURITY));
-        staff.add(new StaffMember(UUID.randomUUID().toString(), "Sammy", "Smith", Position.HOUSEKEEPING));
+    public StaffService(StaffRepository staffRepository) {
+        this.staffRepository = staffRepository;
     }
 
-    public List<StaffMember> getAllStaff() { return staff; }
+    public List<StaffMember> getAllStaff() { return staffRepository.findAll(); }
 }

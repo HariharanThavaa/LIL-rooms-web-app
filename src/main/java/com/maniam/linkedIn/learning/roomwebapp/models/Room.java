@@ -1,7 +1,6 @@
 package com.maniam.linkedIn.learning.roomwebapp.models;
 
 import jakarta.persistence.*;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Entity
 @Table(name = "ROOM")
